@@ -45,9 +45,9 @@ aliases:
       name: unlock gpg key, trying to do this in the goreleaser step with env vars does not seem to work
       command: |
         echo $GPG_KEY | tr " " "\n" | base64 -d | gpg --import --batch
-        gpg --list-secret-keys --keyid-format LONG
-        gpg --list-secret-keys --fingerprint
-        gpg --sign -u "560D 5D3E 6D20 D323 74A6  2612 AEB7 B470 A432 5FA2" --pinentry-mode loopback --yes --batch --passphrase "${GPG_PASS}" --output unlock.sig --detach-sign README.md
+        # gpg --list-secret-keys --keyid-format LONG
+        # gpg --list-secret-keys --fingerprint
+        gpg --sign -u "po4tatyt@gmail.com" --pinentry-mode loopback --yes --batch --passphrase "${GPG_PASS}" --output unlock.sig --detach-sign README.md
         rm -f unlock.sig
 
   - &test-compile-changes
