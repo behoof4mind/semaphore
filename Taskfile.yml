@@ -6,7 +6,7 @@
 version: '2'
 
 vars:
-  docker_namespace: ansiblesemaphore
+  docker_namespace: behoof4mind
   docker_image: semaphore
 
 tasks:
